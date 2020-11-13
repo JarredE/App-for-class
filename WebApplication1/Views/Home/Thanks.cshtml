@@ -1,0 +1,49 @@
+﻿@model WebApplication1.Models.GuestResponce
+@{Layout = null;}<!DOCTYPEhtml>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thank you for your search</title>
+    <link rel ="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+
+
+    <style>
+
+        body {
+            background-image: url('../images/apartment.jpg');
+            background-size: 100%;
+        }
+
+        h1 {
+            color:white;
+        }
+        p {
+
+            color:white;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <p>
+        <h1>Thank you, @Model.Name!</h1>
+        @if (Model.HouseOption == "House" | Model.HouseOption == "Appartment")
+
+
+        {
+            @: <h1 style="color:dodgerblue">Thank you please click the link to see what Houses we have!</h1>
+        }
+
+      
+
+        else
+        {
+            @: <h1 style="color:red">We cannot find anytype without a Search</h1>
+        }
+
+
+    </p>
+    <p>Click <a asp-action="ListResponses">here</a> To see your search</p>
+    <p>Click <a class="nav-link" asp-action="ListResponses">here</a> To see The search</p>
+    <p>Click <a class ="btn btn-info btn-sm" asp-action="RsvpForm">Start another search</a></p>
+</body>
+</html>

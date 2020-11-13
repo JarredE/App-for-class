@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1.Models.GuestResponce>
+@{Layout = null;}
+<!DOCTYPEhtml>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Responses</title>
+    <link rel ="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/> 
+</head>
+<body>
+    <div class="panel-body">
+        <h2>Here is a list of houses</h2>
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+
+            <thead><tr><th>Name</th><th>House Type</th><th>Pets</th></tr></thead>
+            <tbody>
+                @foreach (WebApplication1.Models.GuestResponce r in Model)
+                {
+                    <tr>
+                        <td>@r.Name</td>
+                        <td>@r.HouseOption</td>
+                        <td>@r.pets.Value.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

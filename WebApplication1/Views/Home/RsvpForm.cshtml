@@ -1,0 +1,70 @@
+﻿@model WebApplication1.Models.GuestResponce
+@{Layout = null;}<!DOCTYPEhtml>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Search Form</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+
+        <style>
+
+            body {
+                background-image: url('../images/apartment.jpg');
+                background-size: 100%;
+            }
+            label {
+                color:white;
+            }
+            h1 {
+                color:white;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class ="panel panel-success">
+        <div class ="panel-heading text-center"><h1>Search Form</h1></div>
+        <div class ="panel-body">
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="Name">Your name:</label>
+                    <input class="form-control" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Your email:</label>
+                    <input class="form-control" asp-for="Email" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Your phone:</label>
+                    <input class="form-control" asp-for="Phone" />
+                </div>
+                <div class="form-group">
+                    <label>What Type of Property are you looking for?</label>
+                    <select class="form-control" asp-for="HouseOption">
+                        <option value="">Choose an option</option>
+                        <option value="House">House</option>
+                        <option value="Appartment">appartment</option>
+                        
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Allows pets?</label>
+                    <select class="form-control" asp-for="pets">
+                        <option value="">Choose an option</option>
+                        <option value="true">yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Submit Search</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+</body>
+</html>
